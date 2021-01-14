@@ -10,16 +10,23 @@ var cors = require("cors");
    function exported by the express module. 
 */
 const app = express(); 
-const Pool = require('pg').Pool; 
-  
-const pool = new Pool({ 
-    user: 'postgres', 
-    host: 'localhost', 
-    database: 'backend', 
-    password: 'waitforit20', 
-    dialect: 'postgres', 
-    port: 5432 
-}); 
+// const Pool = require('pg').Pool; 
+const isProduction = process.env.NODE_ENV === 'production';
+
+const pool = new pg.Pool({
+    connectionString: isProduction ? process.env.DATABASE_URL : connectionString,
+    ssl: isProduction,
+  });
+// const pool = new Pool({ 
+//     user: 'postgres', 
+//     host: 'localhost', 
+//     database: 'backend', 
+//     password: 'waitforit20', 
+//     dialect: 'postgres', 
+//     port: 5432, 
+//     max: 10,
+//     idleTimeoutMillis: 30000,
+// }); 
   
   
 /* To handle the HTTP Methods Body Parser  
