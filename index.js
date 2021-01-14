@@ -12,10 +12,13 @@ var cors = require("cors");
 const app = express(); 
 // const Pool = require('pg').Pool; 
 const isProduction = process.env.NODE_ENV === 'production';
+const { Client } = require('pg');
 
-const pool = new pg.Pool({
+const pool = new Client({
     connectionString: process.env.DATABASE_URL,
-    // ssl: isProduction,
+    ssl: {
+      rejectUnauthorized: false
+    }
   });
 // const pool = new Pool({ 
 //     user: 'postgres', 
