@@ -14,8 +14,8 @@ const app = express();
 const isProduction = process.env.NODE_ENV === 'production';
 
 const pool = new pg.Pool({
-    connectionString: isProduction ? process.env.DATABASE_URL : connectionString,
-    ssl: isProduction,
+    connectionString: process.env.DATABASE_URL,
+    // ssl: isProduction,
   });
 // const pool = new Pool({ 
 //     user: 'postgres', 
@@ -29,11 +29,6 @@ const pool = new pg.Pool({
 // }); 
   
   
-/* To handle the HTTP Methods Body Parser  
-   is used, Generally used to extract the  
-   entire body portion of an incoming  
-   request stream and exposes it on req.body  
-*/
 const bodyParser = require('body-parser'); 
 app.use(cors());
 
