@@ -31,6 +31,11 @@ VALUES ('Smith', 'John', False, '2/2/1000');
 
 SELECT * FROM Employee;
 
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+
 
 https://blog.logrocket.com/nodejs-expressjs-postgresql-crud-rest-api-example/
 https://www.geeksforgeeks.org/creating-a-rest-api-backend-using-node-js-express-and-postgres/
