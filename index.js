@@ -70,8 +70,10 @@ const PORT = process.env.PORT || 4000;
   
 // Require the Routes API   
 // Create a Server and run it on the port 3000 
-app.listen(PORT, () => {
-    let host = server.address().address 
-    let port = server.address().port 
-    // Starting the Server at the port 3000 
-}) 
+// app.listen(PORT, ,() => {
+//     let host = server.address().address 
+//     let port = server.address().port 
+//     // Starting the Server at the port 3000 
+// }) 
+
+app.listen(PORT,'0.0.0.0')
