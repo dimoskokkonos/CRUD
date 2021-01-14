@@ -65,11 +65,12 @@ app.post('/All', db.createEntry, async (req, res) =>{})
 app.put('/All/:id', db.updateEntry, async (req, res) =>{})
 app.delete('/All/:id', db.deleteEntry, async (req, res) =>{})
 
+const PORT = process.env.PORT || 4000;
 
   
 // Require the Routes API   
 // Create a Server and run it on the port 3000 
-const server = app.listen(4000, function () { 
+app.listen(PORT, () => {
     let host = server.address().address 
     let port = server.address().port 
     // Starting the Server at the port 3000 
