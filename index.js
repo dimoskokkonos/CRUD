@@ -57,8 +57,9 @@ pool.connect((err, client, release) => {
 //             res.send(testData.rows); 
 //         }) 
 // }) 
+app.get('/', db.getAll, async (req, res) =>{})
 
-app.get('/All', db.getAll, async (req, res) =>{})
+// app.get('/All', db.getAll, async (req, res) =>{})
 app.get('/All/:id', db.getEntryById, async (req, res) =>{})
 app.post('/All', db.createEntry, async (req, res) =>{})
 app.put('/All/:id', db.updateEntry, async (req, res) =>{})
